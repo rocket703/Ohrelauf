@@ -1,0 +1,138 @@
+{
+  "bambinis": [
+    {
+      "rank": 1,
+      "name": "Ohrekicker",
+      "time": "06:20"
+    },
+    {
+      "rank": 2,
+      "name": "Kali 5",
+      "time": "06:34"
+    },
+    {
+      "rank": 3,
+      "name": "Schnelle Wichtel",
+      "time": "06:42"
+    }
+  ],
+  "schueler": [
+    {
+      "rank": 1,
+      "name": "Gutenberg 7",
+      "time": "19:34:35"
+    },
+    {
+      "rank": 2,
+      "name": "SV Kali 4",
+      "time": "20:52:07"
+    },
+    {
+      "rank": 3,
+      "name": "SV Kali 2",
+      "time": "20:52:07"
+    },
+    {
+      "rank": 4,
+      "name": "SV Kali 6",
+      "time": "22:45:50"
+    },
+    {
+      "rank": 5,
+      "name": "SV Kali 3",
+      "time": "23:55:13"
+    },
+    {
+      "rank": 6,
+      "name": "Gutenberg 2",
+      "time": "24:20:82"
+    },
+    {
+      "rank": 7,
+      "name": "Gutenberg 1",
+      "time": "24:57:10"
+    },
+    {
+      "rank": 8,
+      "name": "Gutenberg 5",
+      "time": "25:48:17"
+    },
+    {
+      "rank": 9,
+      "name": "Kanu",
+      "time": "25:48:80"
+    },
+    {
+      "rank": 10,
+      "name": "Super Heros",
+      "time": "27:15:41"
+    },
+    {
+      "rank": 11,
+      "name": "Gutenberg 3",
+      "time": "27:29:04"
+    },
+    {
+      "rank": 12,
+      "name": "Gutenberg 4",
+      "time": "27:52:11"
+    },
+    {
+      "rank": 13,
+      "name": "Gutenberg 6",
+      "time": "28:16:01"
+    }
+  ],
+  "mixed": [
+    {
+      "rank": 1,
+      "name": "SV Kali 1",
+      "time": "36:45:99"
+    },
+    {
+      "rank": 2,
+      "name": "Versicherungsbüro TR",
+      "time": "37:25:51"
+    },
+    {
+      "rank": 3,
+      "name": "Ohrekicker",
+      "time": "38:25:51"
+    },
+    {
+      "rank": 4,
+      "name": "Kanu/Leichtathletik",
+      "time": "39:52:00"
+    },
+    {
+      "rank": 5,
+      "name": "Bier läuft gut",
+      "time": "41:21:66"
+    },
+    {
+      "rank": 6,
+      "name": "Laufrudel",
+      "time": "41:30:58"
+    },
+    {
+      "rank": 7,
+      "name": "Deutsche Post",
+      "time": "41:36:12"
+    },
+    {
+      "rank": 8,
+      "name": "Flinke Mäuse",
+      "time": "47:44:39"
+    },
+    {
+      "rank": 9,
+      "name": "Die fantastischen Vier",
+      "time": "52:36:35"
+    },
+    {
+      "rank": 10,
+      "name": "Team Kleeblatt",
+      "time": "–"
+    }
+  ]
+}
