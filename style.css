@@ -1471,3 +1471,56 @@ body {
         font-size: 1.2rem;
     }
 }
+/* FORM MOBILE FIX */
+.anmelde-form {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Verhindert das "Überstehen" */
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%; /* Wichtig! */
+}
+
+/* Der spezifische Fix für Datumsfelder & mobile Breiten */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100% !important; 
+    max-width: 100%;
+    box-sizing: border-box; /* Padding wird in die Breite eingerechnet */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    -webkit-appearance: none; /* Verhindert Safari-Standard-Design */
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* Stapelt Vorname/Nachname auf dem Handy */
+        gap: 0;
+    }
+}
+
+/* Error-Style */
+.input-error {
+    border-color: #ff4d4d !important;
+    background-color: #fff5f5;
+}
+
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.75rem;
+    margin-top: 5px;
+}

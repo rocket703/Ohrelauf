@@ -136,3 +136,59 @@ if (anmeldeForm) {
         anmeldeForm.reset();
     });
 }
+
+// Formular Logik 
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('anmeldeForm');
+    const dateInputs = form.querySelectorAll('input[type="date"]');
+    
+    // 1. ZUKUNFTS-DATEN IM KALENDER SPERREN
+    // Wir setzen das "max" Attribut auf das heutige Datum
+    const today = new Date().toISOString().split("T")[0];
+    dateInputs.forEach(input => {
+        input.setAttribute('max', today);
+    });
+
+    // 2. VALIDIERUNGS-LOGIK BEIM ABSENDEN
+    form.addEventListener('submit', function(e) {
+        let hasError = false;
+        
+        // Alle bisherigen Fehlermeldungen entfernen
+        document.querySelectorAll('.error-msg').forEach(el => el.remove());
+        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+
+        // E-Mail Validierung
+        const emailInput = document.getElementById('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value)) {
+            showError(emailInput, "Bitte eine gültige E-Mail-Adresse eingeben.");
+            hasError = true;
+        }
+
+        // Geburtsdatum Validierung (Darf nicht in der Zukunft liegen)
+        dateInputs.forEach(input => {
+            const selectedDate = new Date(input.value);
+            const now = new Date();
+            
+            if (selectedDate > now) {
+                showError(input, "Datum darf nicht in der Zukunft liegen.");
+                hasError = true;
+            }
+        });
+
+        // Wenn Fehler da sind: Absenden stoppen
+        if (hasError) {
+            e.preventDefault();
+            // Zum ersten Fehler scrollen
+            document.querySelector('.input-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+
+    function showError(input, message) {
+        input.classList.add('input-error');
+        const msg = document.createElement('span');
+        msg.className = 'error-msg';
+        msg.innerText = message;
+        input.parentNode.appendChild(msg);
+    }
+});
