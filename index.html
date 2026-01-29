@@ -298,18 +298,22 @@
             Melde dein Team für den Ohrelauf 2026 an. Alle Felder sind Pflichtfelder.
         </p>
         
-        <form class="anmelde-form" id="anmeldeForm">
-            <!-- Ansprechpartner -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="anmelde-form" id="anmeldeForm">
+            
+            <input type="hidden" name="access_key" value="db1440e4-b9d3-40d4-81d2-76eededdca7c">
+            <input type="hidden" name="subject" value="Neue Team-Anmeldung: Ohrelauf 2026">
+            <input type="hidden" name="from_name" value="Ohrelauf Webseite">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <div class="form-section">
                 <h3 class="form-section-title">Ansprechpartner</h3>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="vorname">Vorname *</label>
-                        <input type="text" id="vorname" name="vorname" required>
+                        <input type="text" id="vorname" name="Vorname_Ansprechpartner" required>
                     </div>
                     <div class="form-group">
                         <label for="nachname">Nachname *</label>
-                        <input type="text" id="nachname" name="nachname" required>
+                        <input type="text" id="nachname" name="Nachname_Ansprechpartner" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -318,93 +322,86 @@
                 </div>
             </div>
 
-            <!-- Team-Informationen -->
             <div class="form-section">
                 <h3 class="form-section-title">Team-Informationen</h3>
                 <div class="form-group">
                     <label for="teamname">Teamname *</label>
-                    <input type="text" id="teamname" name="teamname" required>
+                    <input type="text" id="teamname" name="TEAM_NAME" required style="font-weight: bold; border-color: var(--brand-light);">
                 </div>
                 <div class="form-group">
                     <label for="gruppe">Gruppe *</label>
-                    <select id="gruppe" name="gruppe" required>
+                    <select id="gruppe" name="Gewählte_Startgruppe" required>
                         <option value="">Bitte wählen...</option>
-                        <option value="bambinis">Bambinis (bis 7 Jahre)</option>
-                        <option value="schueler">Schüler (8-18 Jahre)</option>
-                        <option value="mixed">Mixed (über 18 Jahre)</option>
+                        <option value="Bambinis">Bambinis (bis 7 Jahre)</option>
+                        <option value="Schüler">Schüler (8-18 Jahre)</option>
+                        <option value="Mixed">Mixed (über 18 Jahre)</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Läufer 1 -->
             <div class="form-section">
                 <h3 class="form-section-title">Läufer 1</h3>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="laufer1_spitzname">Spitzname *</label>
-                        <input type="text" id="laufer1_spitzname" name="laufer1_spitzname" required>
+                        <input type="text" id="laufer1_spitzname" name="Läufer_1_Name" required>
                     </div>
                     <div class="form-group">
                         <label for="laufer1_geburtsdatum">Geburtsdatum *</label>
-                        <input type="date" id="laufer1_geburtsdatum" name="laufer1_geburtsdatum" required>
+                        <input type="date" id="laufer1_geburtsdatum" name="Läufer_1_Geburt" required>
                     </div>
                 </div>
             </div>
 
-            <!-- Läufer 2 -->
             <div class="form-section">
                 <h3 class="form-section-title">Läufer 2</h3>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="laufer2_spitzname">Spitzname *</label>
-                        <input type="text" id="laufer2_spitzname" name="laufer2_spitzname" required>
+                        <input type="text" id="laufer2_spitzname" name="Läufer_2_Name" required>
                     </div>
                     <div class="form-group">
                         <label for="laufer2_geburtsdatum">Geburtsdatum *</label>
-                        <input type="date" id="laufer2_geburtsdatum" name="laufer2_geburtsdatum" required>
+                        <input type="date" id="laufer2_geburtsdatum" name="Läufer_2_Geburt" required>
                     </div>
                 </div>
             </div>
 
-            <!-- Läufer 3 -->
             <div class="form-section">
                 <h3 class="form-section-title">Läufer 3</h3>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="laufer3_spitzname">Spitzname *</label>
-                        <input type="text" id="laufer3_spitzname" name="laufer3_spitzname" required>
+                        <input type="text" id="laufer3_spitzname" name="Läufer_3_Name" required>
                     </div>
                     <div class="form-group">
                         <label for="laufer3_geburtsdatum">Geburtsdatum *</label>
-                        <input type="date" id="laufer3_geburtsdatum" name="laufer3_geburtsdatum" required>
+                        <input type="date" id="laufer3_geburtsdatum" name="Läufer_3_Geburt" required>
                     </div>
                 </div>
             </div>
 
-            <!-- Läufer 4 -->
             <div class="form-section">
                 <h3 class="form-section-title">Läufer 4</h3>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="laufer4_spitzname">Spitzname *</label>
-                        <input type="text" id="laufer4_spitzname" name="laufer4_spitzname" required>
+                        <input type="text" id="laufer4_spitzname" name="Läufer_4_Name" required>
                     </div>
                     <div class="form-group">
                         <label for="laufer4_geburtsdatum">Geburtsdatum *</label>
-                        <input type="date" id="laufer4_geburtsdatum" name="laufer4_geburtsdatum" required>
+                        <input type="date" id="laufer4_geburtsdatum" name="Läufer_4_Geburt" required>
                     </div>
                 </div>
             </div>
 
-            <!-- Datenschutz -->
             <div class="form-group">
                 <label class="checkbox-label">
-                    <input type="checkbox" name="datenschutz" required>
+                    <input type="checkbox" name="Datenschutz_akzeptiert" value="Ja" required>
                     <span>Ich habe die <a href="/datenschutz/" target="_blank" style="color: var(--brand-light);">Datenschutzerklärung</a> gelesen und akzeptiere diese. *</span>
                 </label>
             </div>
 
-            <!-- Submit Button -->
             <button type="submit" class="btn-primary full">Anmeldung abschicken</button>
         </form>
     </div>
@@ -415,7 +412,7 @@
     <div class="container centered">
         <div class="footer-logo">OHRELAUF '26</div>
         <div class="footer-nav">
-            <a href="/impressum/">Impressum</a> | <a href="/datenschutz/">Datenschutz</a>
+            <a href="impressum/">Impressum</a> | <a href="datenschutz/">Datenschutz</a>
         </div>
         <div class="portfolio-wrap">
             <a href="https://r3webdesign.de" target="_blank" rel="noopener" class="r3-button">

@@ -43,112 +43,135 @@ body {
 
 /* --- 3. MOBILE SPLASH (FIXIERTER VORHANG) --- */
 .mobile-splash {
-display: none; /* Hide on Desktop */
+    display: none; /* Hide on Desktop */
 }
+
 @media (max-width: 768px) {
-.mobile-splash {
-display: flex;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-z-index: 1;
-flex-direction: column;
-justify-content: flex-start; /* Zurück auf flex-start! */
-align-items: center;
-padding-top: 12vh;
-text-align: center;
-color: white;
+    /* WICHTIG: Damit dvh funktioniert, müssen html & body 100% haben */
+    html, body {
+        height: 100%;
+        margin: 0;
     }
-.branding {
-position: relative;
-text-align: center;
-}
-.splash-bg {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(rgba(0,35,102,0.7), rgba(0,0,0,0.9)), 
-url('images/vorhang.webp') center/cover;
-z-index: -1;
-    }
-.pre-title {
-display: block;
-color: var(--brand-light);
-text-transform: uppercase;
-letter-spacing: 4px;
-font-weight: 400;
-font-size: 1rem;
-margin-bottom: 5px;
-    }
-.main-title {
-font-size: 3.5rem;
-font-weight: 900;
-line-height: 1;
-    }
-/* SPONSOR LABEL */
-.sponsor-label {
-    color: var(--yellow);
-    position: absolute;
-    top: 19vh; /* Direkt unter OHRELAUF */
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 100%;
-    z-index: 10;
-    text-align: center;
-    font-size: 0.6rem; /* Kompakt */
-    line-height: 1.1;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    white-space: nowrap; /* Alles in einer Zeile */
-}
 
-.timer-mob {
-margin-top: auto; /* Drückt Timer nach unten */
-margin-bottom: 80px;
-}
-.days-val {
-display: block;
-font-size: 6rem;
-font-weight: 900;
-color: var(--brand-light);
-line-height: 1;
+    .mobile-splash {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* ÄNDERUNG: dvh statt vh für exakte Handy-Höhe ohne Abschneiden */
+        height: 100dvh; 
+        z-index: 1;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 12dvh; /* Auch hier dvh für Symmetrie */
+        text-align: center;
+        color: white;
+        overflow: hidden;
     }
-.timer-mob label {
-font-size: 1.1rem;
-font-weight: 700;
-text-transform: uppercase;
+
+    .branding {
+        position: relative;
+        text-align: center;
     }
-.swipe-text {
-    position: absolute;
-    bottom: 3vh; /* Ganz nah am unteren Rand */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
 
-.arrow-up {
-    font-size: 2.5rem;
-    color: var(--white);
-    animation: swipeUp 2s infinite ease-in-out;
-    margin-bottom: 5px; /* Kleiner Abstand zum Text */
-}
+    .splash-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,35,102,0.7), rgba(0,0,0,0.9)), 
+                    url('images/vorhang.webp') center/cover;
+        z-index: -1;
+    }
 
-.swipe-text {
-    display: block;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-/* Der Wrapper schiebt den Inhalt DRÜBER */
-.page-wrapper {
-position: relative;
-z-index: 10; /* Höher als Splash */
-margin-top: 100vh;
-background: var(--white);
-box-shadow: 0 -30px 60px rgba(0,0,0,0.4);
+    .pre-title {
+        display: block;
+        color: var(--brand-light);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    /* SPONSOR LABEL - Jetzt mit dvh-Anker */
+    .sponsor-label {
+        color: var(--yellow);
+        position: absolute;
+        top: 19dvh; 
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        z-index: 10;
+        text-align: center;
+        font-size: 0.65rem; 
+        line-height: 1.1;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .timer-mob {
+        margin-top: auto; 
+        /* Dynamischer Abstand nach unten, damit der Swipe-Text Platz hat */
+        margin-bottom: 12dvh; 
+    }
+
+    .days-val {
+        display: block;
+        font-size: 6rem;
+        font-weight: 900;
+        color: var(--brand-light);
+        line-height: 1;
+    }
+
+    .timer-mob label {
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .swipe-area {
+        position: absolute;
+        bottom: 3dvh; /* Immer sauber über dem unteren Rand */
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .arrow-up {
+        font-size: 2.5rem;
+        color: var(--white);
+        animation: swipeUp 2s infinite ease-in-out;
+        margin-bottom: 5px;
+    }
+
+    .swipe-text {
+        display: block;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Der Wrapper schiebt den Inhalt DRÜBER */
+    .page-wrapper {
+        position: relative;
+        z-index: 10;
+        /* ÄNDERUNG: margin-top muss exakt der Splash-Höhe entsprechen */
+        margin-top: 100dvh; 
+        background: var(--white);
+        box-shadow: 0 -30px 60px rgba(0,0,0,0.4);
     }
 }
 
