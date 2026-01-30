@@ -8,7 +8,6 @@ if (burgerBtn && mainNav) {
         burgerBtn.classList.toggle('is-open');
     });
     
-    // Schließe das Menü, wenn man auf einen Link klickt
     const navLinks = mainNav.querySelectorAll('a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -29,14 +28,14 @@ function updateTimer() {
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         
-        // Desktop Anzeige
-        if(document.getElementById("timer-desk")) {
-            document.getElementById("timer-desk").innerText = `${d} Tage ${h}h ${m}m`;
+        const timerDesk = document.getElementById("timer-desk");
+        if(timerDesk) {
+            timerDesk.innerText = `${d} Tage ${h}h ${m}m`;
         }
         
-        // Mobile Anzeige (Nur Tage)
-        if(document.getElementById("days-count")) {
-            document.getElementById("days-count").innerText = d;
+        const daysCount = document.getElementById("days-count");
+        if(daysCount) {
+            daysCount.innerText = d;
         }
     }, 1000);
 }
@@ -49,7 +48,6 @@ async function loadResults() {
         const response = await fetch('ergebnisse.json');
         const data = await response.json();
         
-        // Lade jede Kategorie
         renderResultsTable('bambinis', data.bambinis);
         renderResultsTable('schueler', data.schueler);
         renderResultsTable('mixed', data.mixed);
@@ -61,8 +59,8 @@ async function loadResults() {
 
 function renderResultsTable(category, results) {
     const table = document.getElementById(`table-${category}`);
+    if (!table) return;
     
-    // Header
     let html = `
         <thead>
             <tr>
@@ -74,7 +72,6 @@ function renderResultsTable(category, results) {
         <tbody>
     `;
     
-    // Rows
     results.forEach(result => {
         html += `
             <tr>
@@ -89,10 +86,9 @@ function renderResultsTable(category, results) {
     table.innerHTML = html;
 }
 
-// Lade Ergebnisse beim Seitenstart
 loadResults();
 
-// === TAB SWITCHING FÜR ERGEBNISSE ===
+// === TAB SWITCHING ===
 const resultsTabButtons = document.querySelectorAll('.results-tabs .tab-btn');
 const resultsTabPanels = document.querySelectorAll('.results-wrap .tab-panel');
 
@@ -100,14 +96,12 @@ resultsTabButtons.forEach(button => {
     button.addEventListener('click', () => {
         const targetTab = button.getAttribute('data-tab');
         
-        // Remove active from all
         resultsTabButtons.forEach(btn => btn.classList.remove('active'));
         resultsTabPanels.forEach(panel => {
             panel.classList.add('is-hidden');
             panel.classList.remove('active');
         });
         
-        // Add active to clicked
         button.classList.add('active');
         const targetPanel = document.getElementById(targetTab);
         if (targetPanel) {
@@ -116,95 +110,97 @@ resultsTabButtons.forEach(button => {
         }
     });
 });
-// === ANMELDEFORMULAR ===
-const anmeldeForm = document.getElementById('anmeldeForm');
 
-if (anmeldeForm) {
-    anmeldeForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Sammle alle Daten
-        const formData = new FormData(anmeldeForm);
-        const data = Object.fromEntries(formData);
-        
-        console.log('Anmeldedaten:', data);
-        
-        // Hier kannst du die Daten per AJAX an einen Server senden
-        // oder per E-Mail verschicken (benötigt Backend)
-        
-        alert('Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.');
-        anmeldeForm.reset();
-    });
+// === POPUP FUNKTIONEN ===
+function showPopup() {
+    const popup = document.getElementById('successPopup');
+    if (popup) {
+        popup.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
-// Formular Logik 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('anmeldeForm');
-    const dateInputs = form.querySelectorAll('input[type="date"]');
+function closePopup() {
+    const popup = document.getElementById('successPopup');
+    if (popup) {
+        popup.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+// === FORMULAR HANDLING ===
+window.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM geladen');
     
-    // 1. ZUKUNFTS-DATEN IM KALENDER SPERREN
-    // Wir setzen das "max" Attribut auf das heutige Datum
+    const form = document.getElementById('anmeldeForm');
+    if (!form) {
+        console.log('Formular nicht gefunden');
+        return;
+    }
+    
+    console.log('Formular gefunden!');
+    
+    // Datums-Validierung Setup
+    const dateInputs = form.querySelectorAll('input[type="date"]');
     const today = new Date().toISOString().split("T")[0];
     dateInputs.forEach(input => {
         input.setAttribute('max', today);
     });
-
-    // 2. VALIDIERUNGS-LOGIK BEIM ABSENDEN
-    form.addEventListener('submit', function(e) {
-        let hasError = false;
-        
-        // Alle bisherigen Fehlermeldungen entfernen
-        document.querySelectorAll('.error-msg').forEach(el => el.remove());
-        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
-
-        // E-Mail Validierung
-        const emailInput = document.getElementById('email');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailInput.value)) {
-            showError(emailInput, "Bitte eine gültige E-Mail-Adresse eingeben.");
-            hasError = true;
-        }
-
-        // Geburtsdatum Validierung (Darf nicht in der Zukunft liegen)
-        dateInputs.forEach(input => {
-            const selectedDate = new Date(input.value);
-            const now = new Date();
-            
-            if (selectedDate > now) {
-                showError(input, "Datum darf nicht in der Zukunft liegen.");
-                hasError = true;
+    
+    // Popup Overlay Click
+    const popup = document.getElementById('successPopup');
+    if (popup) {
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                closePopup();
             }
         });
-
-        // Wenn Fehler da sind: Absenden stoppen
-        if (hasError) {
-            e.preventDefault();
-            // Zum ersten Fehler scrollen
-            document.querySelector('.input-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    });
-
-    function showError(input, message) {
-        input.classList.add('input-error');
-        const msg = document.createElement('span');
-        msg.className = 'error-msg';
-        msg.innerText = message;
-        input.parentNode.appendChild(msg);
     }
-});
-// === ANMELDEFORMULAR MIT POPUP ===
-const anmeldeForm = document.getElementById('anmeldeForm');
-const successPopup = document.getElementById('successPopup');
-
-if (anmeldeForm) {
-    anmeldeForm.addEventListener('submit', async function(e) {
+    
+    // Form Submit Handler
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
+        console.log('Formular wird abgeschickt');
         
-        const formData = new FormData(anmeldeForm);
-        const button = anmeldeForm.querySelector('button[type="submit"]');
+        // Fehler zurücksetzen
+        document.querySelectorAll('.error-msg').forEach(el => el.remove());
+        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+        
+        let hasError = false;
+        
+        // E-Mail validieren
+        const emailInput = document.getElementById('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailInput && !emailRegex.test(emailInput.value)) {
+            showError(emailInput, "Bitte gültige E-Mail eingeben.");
+            hasError = true;
+        }
+        
+        // Datum validieren
+        dateInputs.forEach(input => {
+            if (input.value) {
+                const selectedDate = new Date(input.value);
+                const now = new Date();
+                if (selectedDate > now) {
+                    showError(input, "Datum darf nicht in Zukunft liegen.");
+                    hasError = true;
+                }
+            }
+        });
+        
+        if (hasError) {
+            const firstError = document.querySelector('.input-error');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+        
+        // Formular absenden
+        const formData = new FormData(form);
+        const button = form.querySelector('button[type="submit"]');
         const buttonText = button.textContent;
         
-        // Button deaktivieren während des Sendens
         button.disabled = true;
         button.textContent = 'Wird gesendet...';
         button.style.opacity = '0.6';
@@ -216,48 +212,30 @@ if (anmeldeForm) {
             });
             
             const data = await response.json();
+            console.log('Response:', data);
             
             if (data.success) {
-                // Erfolg! Zeige Popup
+                console.log('Erfolg!');
                 showPopup();
-                anmeldeForm.reset();
+                form.reset();
             } else {
-                // Fehler
-                alert('❌ Es gab einen Fehler beim Senden. Bitte versuche es erneut oder kontaktiere uns direkt.');
+                alert('❌ Fehler beim Senden. Bitte erneut versuchen.');
             }
         } catch (error) {
             console.error('Fehler:', error);
-            alert('❌ Netzwerkfehler. Bitte prüfe deine Internetverbindung und versuche es erneut.');
+            alert('❌ Netzwerkfehler. Bitte Verbindung prüfen.');
         }
         
-        // Button wieder aktivieren
         button.disabled = false;
         button.textContent = buttonText;
         button.style.opacity = '1';
     });
-}
-
-// Popup anzeigen
-function showPopup() {
-    if (successPopup) {
-        successPopup.classList.add('show');
-        document.body.style.overflow = 'hidden'; // Verhindert Scrollen
+    
+    function showError(input, message) {
+        input.classList.add('input-error');
+        const msg = document.createElement('span');
+        msg.className = 'error-msg';
+        msg.innerText = message;
+        input.parentNode.appendChild(msg);
     }
-}
-
-// Popup schließen
-function closePopup() {
-    if (successPopup) {
-        successPopup.classList.remove('show');
-        document.body.style.overflow = ''; // Scrollen wieder erlauben
-    }
-}
-
-// Popup bei Klick auf Overlay schließen
-if (successPopup) {
-    successPopup.addEventListener('click', function(e) {
-        if (e.target === successPopup) {
-            closePopup();
-        }
-    });
-}
+});
