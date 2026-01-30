@@ -192,3 +192,72 @@ document.addEventListener("DOMContentLoaded", function() {
         input.parentNode.appendChild(msg);
     }
 });
+// === ANMELDEFORMULAR MIT POPUP ===
+const anmeldeForm = document.getElementById('anmeldeForm');
+const successPopup = document.getElementById('successPopup');
+
+if (anmeldeForm) {
+    anmeldeForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(anmeldeForm);
+        const button = anmeldeForm.querySelector('button[type="submit"]');
+        const buttonText = button.textContent;
+        
+        // Button deaktivieren während des Sendens
+        button.disabled = true;
+        button.textContent = 'Wird gesendet...';
+        button.style.opacity = '0.6';
+        
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                // Erfolg! Zeige Popup
+                showPopup();
+                anmeldeForm.reset();
+            } else {
+                // Fehler
+                alert('❌ Es gab einen Fehler beim Senden. Bitte versuche es erneut oder kontaktiere uns direkt.');
+            }
+        } catch (error) {
+            console.error('Fehler:', error);
+            alert('❌ Netzwerkfehler. Bitte prüfe deine Internetverbindung und versuche es erneut.');
+        }
+        
+        // Button wieder aktivieren
+        button.disabled = false;
+        button.textContent = buttonText;
+        button.style.opacity = '1';
+    });
+}
+
+// Popup anzeigen
+function showPopup() {
+    if (successPopup) {
+        successPopup.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Verhindert Scrollen
+    }
+}
+
+// Popup schließen
+function closePopup() {
+    if (successPopup) {
+        successPopup.classList.remove('show');
+        document.body.style.overflow = ''; // Scrollen wieder erlauben
+    }
+}
+
+// Popup bei Klick auf Overlay schließen
+if (successPopup) {
+    successPopup.addEventListener('click', function(e) {
+        if (e.target === successPopup) {
+            closePopup();
+        }
+    });
+}
