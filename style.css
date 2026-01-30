@@ -47,33 +47,27 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* WICHTIG: Damit dvh funktioniert, müssen html & body 100% haben */
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
-
+    /* Der Vorhang - nur auf Startseite sichtbar */
     .mobile-splash {
-        display: flex;
+        display: none; /* Standardmäßig aus */
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        /* ÄNDERUNG: dvh statt vh für exakte Handy-Höhe ohne Abschneiden */
-        height: 100dvh; 
+        height: 100dvh;
         z-index: 1;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 12dvh; /* Auch hier dvh für Symmetrie */
+        padding-top: 12dvh;
         text-align: center;
         color: white;
         overflow: hidden;
     }
 
-    .branding {
-        position: relative;
-        text-align: center;
+    /* NUR auf der Startseite einblenden */
+    body.is-home .mobile-splash {
+        display: flex;
     }
 
     .splash-bg {
@@ -103,17 +97,16 @@ body {
         line-height: 1;
     }
 
-    /* SPONSOR LABEL - Jetzt mit dvh-Anker */
     .sponsor-label {
         color: var(--yellow);
         position: absolute;
-        top: 19dvh; 
+        top: 19dvh;
         left: 50%;
         transform: translateX(-50%);
         max-width: 100%;
         z-index: 10;
         text-align: center;
-        font-size: 0.65rem; 
+        font-size: 0.65rem;
         line-height: 1.1;
         font-weight: 500;
         letter-spacing: 0.5px;
@@ -121,9 +114,8 @@ body {
     }
 
     .timer-mob {
-        margin-top: auto; 
-        /* Dynamischer Abstand nach unten, damit der Swipe-Text Platz hat */
-        margin-bottom: 12dvh; 
+        margin-top: auto;
+        margin-bottom: 12dvh;
     }
 
     .days-val {
@@ -142,7 +134,7 @@ body {
 
     .swipe-area {
         position: absolute;
-        bottom: 3dvh; /* Immer sauber über dem unteren Rand */
+        bottom: 3dvh;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
@@ -164,16 +156,64 @@ body {
         letter-spacing: 1px;
     }
 
-    /* Der Wrapper schiebt den Inhalt DRÜBER */
+    /* Page Wrapper - Standardmäßig KEIN margin-top */
     .page-wrapper {
         position: relative;
         z-index: 10;
-        /* ÄNDERUNG: margin-top muss exakt der Splash-Höhe entsprechen */
-        margin-top: 100dvh; 
+        margin-top: 0;
         background: var(--white);
+        min-height: auto;
+    }
+
+    /* NUR auf Startseite: margin-top + shadow */
+    body.is-home .page-wrapper {
+        margin-top: 100dvh;
         box-shadow: 0 -30px 60px rgba(0,0,0,0.4);
+        min-height: 100dvh;
     }
 }
+
+/* Desktop Reset */
+@media (min-width: 769px) {
+    .mobile-splash {
+        display: none !important;
+    }
+    .page-wrapper {
+        margin-top: 0 !important;
+        box-shadow: none !important;
+    }
+}
+
+    .days-val {
+        display: block;
+        font-size: 6rem;
+        font-weight: 900;
+        color: var(--brand-light);
+        line-height: 1;
+    }
+
+    .timer-mob label {
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+
+    .arrow-up {
+        font-size: 2.5rem;
+        color: var(--white);
+        animation: swipeUp 2s infinite ease-in-out;
+        margin-bottom: 5px;
+    }
+
+    .swipe-text {
+        display: block;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
 
 /* --- 4. HEADER (SAUBER & MITTIG) --- */
 .header {
@@ -1523,4 +1563,64 @@ select {
     color: #ff4d4d;
     font-size: 0.75rem;
     margin-top: 5px;
+}
+/* === LEGAL CONTENT (Impressum/Datenschutz) === */
+
+.legal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    line-height: 1.8;
+}
+
+.legal-content p {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.legal-content strong {
+    color: var(--brand);
+    font-weight: 700;
+}
+
+.legal-content a {
+    color: var(--brand-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    word-break: break-word; /* Bricht lange Links um */
+    display: inline-block;
+    max-width: 100%;
+}
+
+.legal-content a:hover {
+    color: var(--brand);
+}
+
+@media (max-width: 600px) {
+    .legal-content {
+        padding: 30px 20px;
+    }
+    
+    .legal-content a {
+        font-size: 0.8rem; /* Etwas kleiner auf Mobile */
+    }
+}
+.legal-content + * .section-title,
+.container-small .section-title {
+    font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+    .container-small .section-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 400px) {
+    .container-small .section-title {
+        font-size: 1.5rem;
+    }
 }
