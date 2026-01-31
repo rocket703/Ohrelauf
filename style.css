@@ -1553,6 +1553,7 @@ select {
     font-family: inherit;
     background-color: #ffffff !important;
     -webkit-appearance: none; /* Entfernt Standard-Styling auf iOS */
+    min-height: 45px;
 }
 /* Fix für Safari (iOS) speziell */
 input[type="date"]::-webkit-inner-spin-button,
