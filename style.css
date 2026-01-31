@@ -222,7 +222,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 18px 0;
     border-bottom: 1px solid #eee;
 }
 
@@ -1292,6 +1292,14 @@ body {
     
     .info-value {
         font-size: 1.2rem;
+    }
+}
+/* Mobile: Info-Items gleiche Höhe */
+@media (max-width: 599px) {
+    .info-item {
+        min-height: 120px; /* Alle gleich hoch */
+        display: flex;
+        align-items: center;
     }
 }
 
