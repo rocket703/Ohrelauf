@@ -1545,13 +1545,14 @@ input[type="email"],
 input[type="date"],
 select {
     width: 100% !important; 
-    max-width: 100%;
-    box-sizing: border-box; /* Padding wird in die Breite eingerechnet */
+    max-width: 100% !important;
+    box-sizing: border-box !important; /* Padding wird in die Breite eingerechnet */
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
     background-color: #ffffff !important;
+    -webkit-appearance: none; /* Entfernt Standard-Styling auf iOS */
 }
 /* Fix für Safari (iOS) speziell */
 input[type="date"]::-webkit-inner-spin-button,
