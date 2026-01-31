@@ -1551,7 +1551,13 @@ select {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
-    -webkit-appearance: none; /* Verhindert Safari-Standard-Design */
+    background-color: #ffffff !important;
+}
+/* Fix für Safari (iOS) speziell */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    cursor: pointer;
 }
 
 @media (max-width: 600px) {
