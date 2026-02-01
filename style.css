@@ -1938,3 +1938,57 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 30px; right: 40px;
     color: white; font-size: 40px; cursor: pointer;
 }
+/* KARTE ALS VORHANG STATT FLIPPEN */ 
+/* Container Reset */
+.flip-card {
+    height: 420px;
+    position: relative;
+    overflow: hidden; /* Wichtig: Versteckt den Vorhang, wenn er oben ist */
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Die Vorderseite bleibt statisch unten */
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Die Rückseite wird zum Vorhang */
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--brand); /* Dein Ohrelauf-Blau */
+    color: white;
+    z-index: 2;
+    
+    /* Der Vorhang-Effekt */
+    transform: translateY(-100%); /* Startposition: Über der Karte */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Sanftes Gleiten */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Wenn die Karte die Klasse 'active' bekommt, slide nach unten */
+.flip-card.active .card-back {
+    transform: translateY(0);
+}
+
+/* Optional: Bild auf der Vorderseite leicht abdunkeln/zoomen beim Hover */
+.flip-card:hover .c-img img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
