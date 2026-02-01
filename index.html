@@ -155,10 +155,8 @@
                     <span class="info-hint">→ Route planen</span>
                 </div>
             </a>
+            <a href="infos/" style="text-align: center; display: block; margin: auto;" class="btn-primary">Zeitplan & Infos</a>
         </div>
-         <div style="text-align: center; width: 100%; margin-top: 20px;">
-    <a href="infos/" class="btn-primary">Zeitplan & Infos</a>
-</div>
     </div>
 </section>
 
@@ -174,19 +172,21 @@
             <!-- Rechte Seite: Content -->
             <div class="phil-right">
                 <p class="phil-text">
-                    Der Wolmirstedter Ohrelauf ist mehr als nur ein Rennen. Was im Jahr 2018 als erster Versuch gestartet ist, 
-                    entwickelte sich über die Jahre zu einer festen Tradition, die immer weiter wächst. Der 7. Wolmirstedter Ohrelauf
+                    Der Wolmirstedter Ohrelauf ist mehr als nur ein Rennen. Was 2018 gestartet ist, 
+                    ist zu einer festen Tradition geworden, die jedes Jahr weiter wächst. Der 7. Wolmirstedter Ohrelauf
                     findet am 19. Juni 2026 auf der Schloßdomäne Wolmirstedt statt.
                 </p>
                 <p class="phil-text">
                     Gemeinsam sammeln wir Kilometer für den guten Zweck. Denn Bewegung und Gemeinschaft sollen 
-                    für alle zugänglich sein. Die gesammelten Spenden gehen direkt an den Verein <a style="text-decoration: none;" href="https://www.blauenasehilft.de/" target="_blank" rel="noopener noreferrer">
-                    <span style="color: var(--brand-light);">Blaue Nasen e.V.</span>
-                    </a>, 
+                    für alle zugänglich sein.
+                </p>
+                <p class="phil-text">
+                    Die gesammelten Spenden gehen direkt an den Verein <a style="text-decoration: none;" href="https://www.blauenasehilft.de/" target="_blank" rel="noopener noreferrer">
+  <span style="color: var(--brand-light);">Blaue Nasen e.V.</span>
+</a>, 
                     der kranken Kindern ein Lächeln ins Gesicht zaubert. Jeder gelaufene Kilometer 
                     zählt – sportlich und sozial.
                 </p>
-
                 <div class="phil-cta">
                     <span class="cta-icon">💙</span>
                     <span>Sei dabei. Lauf mit. Mach den Unterschied.</span>
@@ -201,103 +201,64 @@
         <h2 class="section-title centered">Wähle deine Strecke</h2>
         <div class="card-grid">
             <!-- Karte 1 -->
-            <div class="flip-card" onclick="this.classList.toggle('active')">
-    <div class="card-front">
-        <div class="c-img"><img src="images/strecke_01.jpeg"></div>
-        <div class="c-content">
-            <h3>Bambini - Lauf</h3>
-            <p>Distanz: 350m</p>
-            <span class="card-hint">Tippen für Details</span>
-        </div>
-    </div>
-    
-    <div class="card-back">
-        <h3>Details</h3>
-        <p>Start: 16:45 Uhr<br>Route: Blau<br>Alter: Bis 7 Jahre</p>
-        <span class="card-hint">↻ Zurück</span>
-    </div>
-</div>
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="c-img"><img src="images/strecke_01.jpeg"></div>
+                        <div class="c-content">
+                            <h3>Bambini - Lauf</h3>
+                            <p>Distanz: 350m</p>
+                            <span class="card-hint">↻ Tippen für Details</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>Details</h3>
+                        <p>Start: 16:45 Uhr<br>Distanz: 350m<br>Route: Blau<br>Alter: Bis 7Jahre</p>
+                        <span class="card-hint">↻ Zurück</span>
+                    </div>
+                </div>
+            </div>
             
             <!-- Karte 2 -->
-            <div class="flip-card" onclick="this.classList.toggle('active')">
-    <div class="card-front">
-        <div class="c-img"><img src="images/strecke_02.jpeg" alt="Schüler-Lauf"></div>
-        <div class="c-content">
-            <h3>Schüler - Lauf</h3>
-            <p>Distanz: 1,3 Km</p>
-            <span class="card-hint">Tippen für Details</span>
-        </div>
-    </div>
-    
-    <div class="card-back">
-        <h3>Details</h3>
-        <p>
-            <strong>Start:</strong> 17:00 Uhr<br>
-            <strong>Distanz:</strong> 1,3 Km<br>
-            <strong>Route:</strong> Grün<br>
-            <strong>Alter:</strong> 8 - 18 Jahre
-        </p>
-        <span class="card-hint">↻ Zurück</span>
-    </div>
-</div>
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="c-img"><img src="images/strecke_02.jpeg"></div>
+                        <div class="c-content">
+                            <h3>Schüler - Lauf</h3>
+                            <p>Distanz: 1,3Km</p>
+                            <span class="card-hint">↻ Tippen für Details</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>Details</h3>
+                        <p>Start: 17:00 Uhr<br>Distanz: 1,3 Km<br>Route: Grün<br>Alter: Bis 16 Jahren</p>
+                        <span class="card-hint">↻ Zurück</span>
+                    </div>
+                </div>
+            </div>
             
             <!-- Karte 3 -->
-            <div class="flip-card" onclick="this.classList.toggle('active')">
-    <div class="card-front">
-        <div class="c-img"><img src="images/strecke_03.jpeg" alt="Mixed-Staffel"></div>
-        <div class="c-content">
-            <h3>Mixed - Staffel</h3>
-            <p>Distanz: 2,4 Km</p>
-            <span class="card-hint">Tippen für Details</span>
-        </div>
-    </div>
-    
-    <div class="card-back">
-        <h3>Details</h3>
-        <p>
-            <strong>Start:</strong> 17:45 Uhr<br>
-            <strong>Distanz:</strong> 2,4 Km<br>
-            <strong>Route:</strong> Rot<br>
-            <strong>Team:</strong> 4er Teams Mixed
-        </p>
-        <span class="card-hint">↻ Zurück</span>
-    </div>
-</div>
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="c-img"><img src="images/strecke_03.jpeg"></div>
+                        <div class="c-content">
+                            <h3>Mixed - Staffellauf</h3>
+                            <p>Distanz: 2,4Km</p>
+                            <span class="card-hint">↻ Tippen für Details</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>Details</h3>
+                        <p>Start: 17:15 Uhr<br>Distanz: 2,4 Km<br>Route: Rot<br>4er Teams Mixed</p>
+                        <span class="card-hint">↻ Zurück</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- BILDER AUS DER VORJAHREN ENDLOS BANNER-->
-
-<section class="photo-marquee-section">
-    <h2 class="section-title centered">Impressionen aus den Vorjahren</h2>
-    <div class="marquee">
-        <div class="marquee-content" id="marquee-content">
-            <img src="images/rueckblick1.webp" alt="Laufbild" class="marquee-img" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick2.webp" alt="Laufbild" class="marquee-img" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick3.webp" alt="Laufbild" class="marquee-img" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick4.webp" alt="Laufbild" class="marquee-img" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick5.webp" alt="Laufbild" class="marquee-img" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick6.webp" alt="Laufbild" class="marquee-img" onclick="openLightbox(this.src)">
-            
-            <img src="images/rueckblick7.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick8.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick9.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick10.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick11.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick12.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick13.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick14.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-            <img src="images/rueckblick15.webp" alt="Laufbild" class="marquee-img" loading="lazy" onclick="openLightbox(this.src)">
-        </div>
-    </div>
-</section>
-
-<div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="" alt="Großansicht">
-</div>
 
 <section id="ergebnisse" class="section">
     <div class="container">
