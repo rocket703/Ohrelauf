@@ -239,3 +239,17 @@ window.addEventListener('DOMContentLoaded', function() {
         input.parentNode.appendChild(msg);
     }
 });
+// LOGHTBOX FÜR DIE BILDER
+// Marquee Bilder verdoppeln für Endlos-Effekt
+const marqueeContent = document.getElementById('marquee-content');
+if (marqueeContent) {
+    marqueeContent.innerHTML += marqueeContent.innerHTML;
+}
+
+// Lightbox Funktionen
+function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    lbImg.src = src;
+    lb.classList.add('active');
+}
