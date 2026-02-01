@@ -1870,3 +1870,64 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         font-size: 1.2rem;
     }
 }
+
+/*FOTO ENDLOS SCHLEIFE */
+/* Marquee Container */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 20px 0;
+    background: var(--gray);
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee-img {
+    height: 200px;
+    margin: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.marquee-img:hover {
+    transform: scale(1.05);
+    animation-play-state: paused; /* Stoppt beim Hover */
+}
+
+/* Endlos-Animation */
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Lightbox Style */
+.lightbox {
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none; /* Versteckt */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active { display: flex; animation: fadeIn 0.3s; }
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px; right: 40px;
+    color: white; font-size: 40px; cursor: pointer;
+}

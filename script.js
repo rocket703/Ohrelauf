@@ -239,7 +239,6 @@ window.addEventListener('DOMContentLoaded', function() {
         input.parentNode.appendChild(msg);
     }
 });
-// LOGHTBOX FÜR DIE BILDER
 // Marquee Bilder verdoppeln für Endlos-Effekt
 const marqueeContent = document.getElementById('marquee-content');
 if (marqueeContent) {
@@ -253,3 +252,10 @@ function openLightbox(src) {
     lbImg.src = src;
     lb.classList.add('active');
 }
+window.closeLightbox = function() {
+    const lb = document.getElementById('lightbox');
+    if (lb) {
+        lb.classList.remove('active'); // Das hier nimmt das "display: flex" wieder weg
+        document.body.style.overflow = 'auto'; // Erlaubt das Scrollen wieder
+    }
+};
