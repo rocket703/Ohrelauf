@@ -1875,28 +1875,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Marquee Container */
 .marquee {
     overflow: hidden;
-    white-space: nowrap;
     position: relative;
-    padding: 20px 0;
-    background: var(--gray);
+    width: 100%;
+    background: var(--white);
+    padding: 30px 0;
 }
 
 .marquee-content {
-    display: inline-block;
-    animation: marquee-scroll 40s linear infinite;
+    display: flex; /* Verhindert Abstände zwischen Bildern */
+    gap: 20px;     /* Definiert den Abstand zwischen den Bildern sauber */
+    width: max-content; /* Wichtig für die korrekte Breitenberechnung */
+    animation: marquee-scroll 60s linear infinite;
+    will-change: transform;
 }
 
 .marquee-img {
     height: 200px;
-    margin: 0 10px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    -webkit-transform: translate3d(0,0,0); /* Zwingt iOS zur Hardware-Beschleunigung */
-    transform: translate3d(0,0,0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    width: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    -webkit-backface-visibility: hidden; /* Fix für Safari-Flackern */
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Läuft bis zur Hälfte (da Bilder verdoppelt) */
 }
 
 .marquee-img:hover {
