@@ -1893,6 +1893,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     transition: transform 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    -webkit-transform: translate3d(0,0,0); /* Zwingt iOS zur Hardware-Beschleunigung */
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .marquee-img:hover {
