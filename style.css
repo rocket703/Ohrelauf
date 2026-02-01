@@ -1895,7 +1895,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 12px;
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    -webkit-backface-visibility: hidden; /* Fix für Safari-Flackern */
+    
+    /* WICHTIG FÜR IPHONE */
+    -webkit-transform: translateZ(0); 
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
 }
 
 @keyframes marquee-scroll {
