@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link zu deiner Sitemap
+Sitemap: https://ohrelauf.de/sitemap.xml
