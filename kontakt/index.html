@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Wolmirstedter Ohrelauf 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .contact-form {
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gray, #e2e8f0);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: #f8fafc;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand, #0056b3);
+            background: #fff;
+        }
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+            font-weight: 700;
+        }
+        
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .popup-overlay.active {
+            opacity: 1;
+            opacity: 1 !important; /* !important hinzugefügt zur Sicherheit */
+            pointer-events: auto !important;
+        }
+        .popup-content {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .popup-overlay.active .popup-content {
+            transform: translateY(0);
+        }
+        .popup-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .popup-success .popup-icon { color: #10b981; }
+        .popup-error .popup-icon { color: #ef4444; }
+        .popup-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        .popup-text {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        .btn-close-popup {
+            background: var(--brand, #0056b3);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            font-family: inherit;
+        }
+        .btn-close-popup:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="../" style="text-decoration: none; color: inherit;">
+                    OHRELAUF<span>'26</span>
+                </a>
+            </div>
+            <nav class="nav" id="main-nav">
+                <ul>
+                    <li><a href="../#philosophie">Philosophie</a></li>
+                    <li><a href="../#strecken">Strecken</a></li>
+                    <li><a href="../#ergebnisse">Ergebnisse '25</a></li>
+                    <li><a href="../infos/">Infos</a></li>
+                    <li><a href="../#anmeldung">Anmeldung</a></li>
+                </ul>
+            </nav>
+            <button id="burger-btn" class="burger-btn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <main>
+            <section class="section">
+                <div class="container">
+                    <div class="container-small">
+                        <h1 class="section-title">Kontakt</h1>
+                        <p style="text-align: center; margin-bottom: 2rem;">Hast du Fragen zum Ohrelauf? Schreib uns gerne eine Nachricht!</p>
+                        
+                        <div class="legal-content">
+                            <form id="contactForm" class="contact-form" novalidate>
+                                <input type="hidden" name="access_key" value="db1440e4-b9d3-40d4-81d2-76eededdca7c">
+                                <input type="hidden" name="subject" value="Neue Kontaktanfrage - Ohrelauf 2026">
+                                
+                                <div class="form-group">
+                                    <label for="vorname">Vorname</label>
+                                    <input type="text" id="vorname" name="Vorname" class="form-control" placeholder="Dein Vorname">
+                                    <div class="error-message" id="error-vorname">Bitte gib deinen Vornamen ein.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nachname">Nachname</label>
+                                    <input type="text" id="nachname" name="Nachname" class="form-control" placeholder="Dein Nachname">
+                                    <div class="error-message" id="error-nachname">Bitte gib deinen Nachnamen ein.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">E-Mail-Adresse</label>
+                                    <input type="email" id="email" name="Email" class="form-control" placeholder="deine.adresse@beispiel.de">
+                                    <div class="error-message" id="error-email">Bitte gib eine gültige E-Mail-Adresse ein.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nachricht">Nachricht</label>
+                                    <textarea id="nachricht" name="Nachricht" class="form-control" rows="5" placeholder="Wie können wir dir helfen?"></textarea>
+                                    <div class="error-message" id="error-nachricht">Bitte schreibe eine Nachricht.</div>
+                                </div>
+
+                                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                                <div style="margin-top: 2rem; text-align: center;">
+                                    <button type="submit" class="btn-primary" id="submitBtn">
+                                        Nachricht senden <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container centered">
+                <div class="footer-logo">OHRELAUF '26</div>
+                <div class="footer-nav">
+                    <a href="../impressum/">Impressum</a> | <a href="../datenschutz/">Datenschutz</a> | <a href="../kontakt/">Kontakt</a>
+                </div>
+                <div class="portfolio-wrap">
+                    <a href="https://r3webdesign.de" target="_blank" rel="noopener" class="r3-button">
+                        <span class="r3-txt">designed by r3webdesign.de</span>
+                        <span class="r3-flare"></span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="popup-overlay popup-success" id="successPopup">
+        <div class="popup-content">
+            <div class="popup-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3 class="popup-title">Erfolgreich gesendet!</h3>
+            <p class="popup-text">Vielen Dank für deine Nachricht. Wir werden uns so schnell wie möglich bei dir melden.</p>
+            <button class="btn-close-popup" onclick="closePopup('successPopup')">Schließen</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay popup-error" id="errorPopup">
+        <div class="popup-content">
+            <div class="popup-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3 class="popup-title">Das hat nicht geklappt</h3>
+            <p class="popup-text">Leider gab es ein Problem beim Senden. Bitte versuche es später noch einmal.</p>
+            <button class="btn-close-popup" onclick="closePopup('errorPopup')">Schließen</button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Verhindert das normale Neuladen der Seite
+            
+            let isValid = true;
+            
+            // Felder holen
+            const fields = [
+                { id: 'vorname', type: 'text' },
+                { id: 'nachname', type: 'text' },
+                { id: 'email', type: 'email' },
+                { id: 'nachricht', type: 'text' }
+            ];
+
+            // Validierung
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const errorMsg = document.getElementById(`error-${field.id}`);
+                
+                // Reset styling
+                input.classList.remove('is-invalid');
+                errorMsg.style.display = 'none';
+
+                if (field.type === 'email') {
+                    // Simpler Regex für E-Mail-Prüfung
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(input.value.trim())) {
+                        input.classList.add('is-invalid');
+                        errorMsg.style.display = 'block';
+                        isValid = false;
+                    }
+                } else {
+                    if (input.value.trim() === '') {
+                        input.classList.add('is-invalid');
+                        errorMsg.style.display = 'block';
+                        isValid = false;
+                    }
+                }
+            });
+
+            // Wenn alles korrekt ausgefüllt ist -> Senden
+            if (isValid) {
+                const form = e.target;
+                const formData = new FormData(form);
+                const submitBtn = document.getElementById('submitBtn');
+                const originalBtnText = submitBtn.innerHTML;
+                
+                // Button Status ändern
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sendet...';
+                submitBtn.disabled = true;
+
+                // Web3Forms API Aufruf (als JSON, damit die Seite nicht weiterleitet)
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let jsonResult = await response.json();
+                    if (response.status == 200) {
+                        // Erfolgs-Popup anzeigen
+                        document.getElementById('successPopup').classList.add('active');
+                        form.reset(); // Formular leeren
+                    } else {
+                        // Fehler-Popup anzeigen
+                        console.log(response);
+                        document.getElementById('errorPopup').classList.add('active');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    document.getElementById('errorPopup').classList.add('active');
+                })
+                .finally(() => {
+                    // Button wiederherstellen
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+            }
+        });
+
+        // Live-Validierung entfernen, sobald der Nutzer tippt
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('is-invalid');
+                document.getElementById(`error-${this.id}`).style.display = 'none';
+            });
+        });
+
+        // Popup schließen Funktion
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove('active');
+        }
+    </script>
+</body>
+</html>
