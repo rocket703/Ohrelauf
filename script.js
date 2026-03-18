@@ -259,3 +259,36 @@ window.closeLightbox = function() {
         document.body.style.overflow = 'auto'; // Erlaubt das Scrollen wieder
     }
 };
+
+// === STARTERLISTE 2026 LADEN ===
+async function loadStarterlist() {
+    const tableBody = document.getElementById('teams-list-body');
+    if (!tableBody) return;
+
+    try {
+        // Lädt die Teams aus der teams.json
+        const response = await fetch('teams.json');
+        const teams = await response.json();
+        
+        if (teams.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="3" style="text-align:center; padding: 40px;">Noch keine Teams gemeldet.</td></tr>';
+            return;
+        }
+
+        // Tabelle befüllen
+        tableBody.innerHTML = teams.map(team => `
+            <tr>
+                <td>${team.nummer}</td>
+                <td>${team.name}</td>
+                <td>${team.kategorie}</td>
+            </tr>
+        `).join('');
+
+    } catch (error) {
+        console.error('Fehler beim Laden der Starterliste:', error);
+        tableBody.innerHTML = '<tr><td colspan="3" style="text-align:center; padding: 40px;">Liste wird gerade aktualisiert...</td></tr>';
+    }
+}
+
+// Funktion sofort ausführen
+loadStarterlist();
