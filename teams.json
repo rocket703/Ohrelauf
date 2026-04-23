@@ -39,9 +39,14 @@
 "name": "Die flotten Störche",
 "kategorie": "Bambinis"
 },
-  {
+     {
 "nummer": "09",
 "name": "SV Döner ohne scharf",
+"kategorie": "Mixed"
+},
+  {
+"nummer": "10",
+"name": "AWG Wohnfüchse",
 "kategorie": "Mixed"
 }
 ]
