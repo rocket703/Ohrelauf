@@ -44,9 +44,14 @@
 "name": "SV Döner ohne scharf",
 "kategorie": "Mixed"
 },
-  {
+      {
 "nummer": "10",
 "name": "AWG Wohnfüchse",
+"kategorie": "Mixed"
+},
+  {
+"nummer": "11",
+"name": "Lustgraben",
 "kategorie": "Mixed"
 }
 ]
