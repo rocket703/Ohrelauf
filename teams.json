@@ -49,9 +49,24 @@
 "name": "AWG Wohnfüchse",
 "kategorie": "Mixed"
 },
-  {
+      {
 "nummer": "11",
 "name": "Lustgraben",
+"kategorie": "Mixed"
+},
+     {
+"nummer": "12",
+"name": "Sippenkinder groß",
+"kategorie": "Schüler"
+},
+   {
+"nummer": "13",
+"name": "Sippenmamas",
+"kategorie": "Mixed"
+},
+  {
+"nummer": "14",
+"name": "Sippenpapas",
 "kategorie": "Mixed"
 }
 ]
