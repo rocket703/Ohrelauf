@@ -74,9 +74,14 @@
 "name": "Sippenmamas",
 "kategorie": "Mixed"
 },
-  {
+   {
 "nummer": "16",
 "name": "Sippenpapas",
+"kategorie": "Mixed"
+},
+  {
+"nummer": "17",
+"name": "Blaue Nase hilft",
 "kategorie": "Mixed"
 }
 ]
