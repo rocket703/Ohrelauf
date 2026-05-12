@@ -54,18 +54,28 @@
 "name": "Lustgraben",
 "kategorie": "Mixed"
 },
-     {
+  {
 "nummer": "12",
+"name": "Sippenkinder klein",
+"kategorie": "Bambinis"
+},
+     {
+"nummer": "13",
 "name": "Sippenkinder groß",
 "kategorie": "Schüler"
 },
+       {
+"nummer": "14",
+"name": "Sippenkinder ganz groß",
+"kategorie": "Schüler"
+},
    {
-"nummer": "13",
+"nummer": "15",
 "name": "Sippenmamas",
 "kategorie": "Mixed"
 },
   {
-"nummer": "14",
+"nummer": "16",
 "name": "Sippenpapas",
 "kategorie": "Mixed"
 }
