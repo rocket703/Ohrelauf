@@ -79,9 +79,39 @@
 "name": "Sippenpapas",
 "kategorie": "Mixed"
 },
-  {
+   {
 "nummer": "17",
 "name": "Blaue Nase hilft",
 "kategorie": "Mixed"
+},
+  {
+"nummer": "18",
+"name": "Gutenberg 1",
+"kategorie": "Schüler"
+},
+   {
+"nummer": "19",
+"name": "Gutenberg 2",
+"kategorie": "Schüler"
+},
+   {
+"nummer": "20",
+"name": "Gutenberg 3",
+"kategorie": "Schüler"
+},
+   {
+"nummer": "21",
+"name": "Gutenberg 4",
+"kategorie": "Schülerd"
+},
+   {
+"nummer": "22",
+"name": "Gutenberg 5",
+"kategorie": "Schüler"
+},
+   {
+"nummer": "23",
+"name": "Gutenberg 6",
+"kategorie": "Schüler"
 }
 ]
