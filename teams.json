@@ -114,9 +114,14 @@
 "name": "Gutenberg 6",
 "kategorie": "Schüler"
 },
-   {
+       {
 "nummer": "24",
 "name": "Sternmelissen",
 "kategorie": "Mixed"
+},
+   {
+"nummer": "25",
+"name": "Läufer statt Denker",
+"kategorie": "Schüler"
 }
 ]
