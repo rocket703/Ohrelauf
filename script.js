@@ -249,9 +249,12 @@ if (marqueeContent) {
 function openLightbox(src) {
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
+    if (!lb || !lbImg) return;
     lbImg.src = src;
     lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
+window.openLightbox = openLightbox;
 window.closeLightbox = function() {
     const lb = document.getElementById('lightbox');
     if (lb) {
@@ -292,3 +295,17 @@ async function loadStarterlist() {
 
 // Funktion sofort ausführen
 loadStarterlist();
+
+function markPastTrainingDates() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    document.querySelectorAll('.training-date[data-date]').forEach(item => {
+        const trainingDay = new Date(item.dataset.date + 'T00:00:00');
+        if (trainingDay < today) {
+            item.classList.add('is-past');
+        }
+    });
+}
+
+markPastTrainingDates();

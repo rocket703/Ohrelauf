@@ -44,6 +44,63 @@
                     <h1 class="section-title">Läufer-Informationen</h1>
                     <p class="phil-tagline">Alles, was du für deinen Start wissen musst.</p>
 
+                    <section id="vorbereitung" class="training-section training-section--embedded">
+                        <h2 class="section-title">Vorbereitungstraining</h2>
+                        <p class="training-intro">Auf die Plätze, fertig – gemeinsam fit werden zum Lauf am 19. Juni 2026! Das kostenlose Training findet jeweils montags statt.</p>
+                        <div class="training-grid">
+                            <figure class="training-flyer-wrap">
+                                <img src="../images/training-flyer-400.webp"
+                                     srcset="../images/training-flyer-400.webp 400w, ../images/training-flyer-800.webp 723w"
+                                     sizes="(min-width: 900px) 420px, min(100vw - 40px, 420px)"
+                                     alt="Flyer Vorbereitungstraining Ohrelauf: Termine 27.05., 03.06., 10.06. und 17.06.2026, jeweils 18:00 Uhr, Treffpunkt Schloßdomäne Wolmirstedt"
+                                     class="training-flyer"
+                                     onclick="openLightbox('../images/training-flyer.webp')"
+                                     loading="lazy"
+                                     width="723"
+                                     height="1024">
+                                <figcaption class="training-flyer-hint">Tippen oder klicken für Großansicht</figcaption>
+                            </figure>
+                            <div class="training-details">
+                                <h3 class="training-details-title">Trainingstermine</h3>
+                                <ul class="training-dates">
+                                    <li class="training-date" data-date="2026-05-27">
+                                        <span class="info-icon" aria-hidden="true"></span>
+                                        <time datetime="2026-05-27">27.05.2026</time>
+                                    </li>
+                                    <li class="training-date" data-date="2026-06-03">
+                                        <span class="info-icon" aria-hidden="true"></span>
+                                        <time datetime="2026-06-03">03.06.2026</time>
+                                    </li>
+                                    <li class="training-date" data-date="2026-06-10">
+                                        <span class="info-icon" aria-hidden="true"></span>
+                                        <time datetime="2026-06-10">10.06.2026</time>
+                                    </li>
+                                    <li class="training-date" data-date="2026-06-17">
+                                        <span class="info-icon" aria-hidden="true"></span>
+                                        <time datetime="2026-06-17">17.06.2026</time>
+                                    </li>
+                                </ul>
+                                <div class="training-meta">
+                                    <div class="training-meta-item">
+                                        <span class="info-icon" aria-hidden="true"></span>
+                                        <div>
+                                            <span class="training-meta-label">Uhrzeit</span>
+                                            <span class="training-meta-value">18:00 Uhr</span>
+                                        </div>
+                                    </div>
+                                    <div class="training-meta-item">
+                                        <span class="info-icon" aria-hidden="true"></span>
+                                        <div>
+                                            <span class="training-meta-label">Treffpunkt</span>
+                                            <a href="https://www.google.com/maps/dir/?api=1&destination=Schloßdomäne,39326+Wolmirstedt" target="_blank" rel="noopener noreferrer" class="training-meta-value training-meta-link">Schloßdomäne Wolmirstedt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="training-note">Für alle: Einsteiger und Fortgeschrittene herzlich willkommen!</p>
+                            </div>
+                        </div>
+                    </section>
+
                     <div class="info-content-grid">
 
                          <div class="info-card">
@@ -147,6 +204,11 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Großansicht">
     </div>
 
      <script src="../script.js"></script>

@@ -1289,6 +1289,253 @@ display: inline-block; /* Statt flex */
 font-size: 1.4rem;
 }
 }
+
+/* --- VORBEREITUNGSTRAINING --- */
+.training-section {
+padding: 70px 0;
+}
+
+.training-section--embedded {
+margin: 50px 0 60px;
+background: var(--gray);
+border-radius: 25px;
+padding: 40px 30px;
+}
+
+.training-intro {
+max-width: 600px;
+margin: 0 auto 40px;
+color: #555;
+font-size: 1.05rem;
+line-height: 1.6;
+}
+
+.training-section--embedded .training-intro {
+margin: 0 0 35px;
+max-width: none;
+text-align: left;
+}
+
+.training-section--embedded .section-title {
+font-size: 2rem;
+margin-bottom: 10px;
+text-align: left;
+}
+
+.training-grid {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 35px;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.training-flyer-wrap {
+margin: 0;
+max-width: 420px;
+width: 100%;
+}
+
+.training-flyer {
+width: 100%;
+height: auto;
+border-radius: 16px;
+box-shadow: 0 12px 40px rgba(0, 35, 102, 0.15);
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+display: block;
+}
+
+.training-flyer:hover {
+transform: scale(1.02);
+box-shadow: 0 16px 50px rgba(0, 35, 102, 0.2);
+}
+
+.training-flyer-hint {
+text-align: center;
+font-size: 0.85rem;
+color: #888;
+margin-top: 10px;
+font-weight: 500;
+}
+
+.training-details {
+width: 100%;
+}
+
+.training-details-title {
+font-size: 1.3rem;
+font-weight: 800;
+color: var(--brand);
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.training-dates {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin-bottom: 30px;
+}
+
+.training-dates li {
+background: white;
+border-radius: 14px;
+box-shadow: 0 4px 15px rgba(0, 35, 102, 0.06);
+border: 1px solid #eef2f7;
+}
+
+.training-section--embedded .training-dates li {
+border: 1px solid #e8edf3;
+}
+
+.training-date {
+display: flex;
+align-items: center;
+gap: 16px;
+padding: 16px 20px;
+}
+
+.training-date time {
+font-weight: 700;
+font-size: 1.15rem;
+color: var(--brand);
+}
+
+.training-date.is-past time {
+text-decoration: line-through;
+opacity: 0.45;
+}
+
+.training-date.is-past .info-icon::before {
+opacity: 0.45;
+}
+
+.training-dates .info-icon {
+font-size: 1.8rem;
+flex-shrink: 0;
+}
+
+.training-dates .info-icon::before {
+content: '📅';
+filter: none;
+color: var(--brand-light);
+}
+
+.training-meta-item .info-icon {
+font-size: 1.8rem;
+flex-shrink: 0;
+}
+
+.training-meta-item:nth-child(1) .info-icon::before {
+content: '⏰';
+filter: none;
+color: var(--brand-light);
+}
+
+.training-meta-item:nth-child(2) .info-icon::before {
+content: '📍';
+filter: none;
+color: var(--brand-light);
+}
+
+.training-meta {
+display: flex;
+flex-direction: column;
+gap: 16px;
+margin-bottom: 25px;
+}
+
+.training-meta-item {
+display: flex;
+align-items: center;
+gap: 16px;
+background: white;
+padding: 18px 20px;
+border-radius: 14px;
+box-shadow: 0 4px 15px rgba(0, 35, 102, 0.06);
+border: 1px solid #eef2f7;
+}
+
+.training-section--embedded .training-meta-item {
+border: 1px solid #e8edf3;
+}
+
+.training-meta-label {
+display: block;
+font-size: 0.8rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: #888;
+font-weight: 600;
+}
+
+.training-meta-value {
+display: block;
+font-size: 1.1rem;
+font-weight: 800;
+color: var(--brand);
+margin-top: 2px;
+}
+
+.training-meta-link {
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.training-meta-link:hover {
+color: var(--brand-light);
+}
+
+.training-note {
+font-size: 1rem;
+font-weight: 600;
+color: #444;
+line-height: 1.5;
+padding: 18px 20px;
+background: linear-gradient(135deg, rgba(77, 166, 255, 0.1) 0%, rgba(0, 35, 102, 0.05) 100%);
+border-left: 4px solid var(--brand-light);
+border-radius: 0 12px 12px 0;
+margin-bottom: 25px;
+}
+
+.training-more-link {
+display: inline-block;
+}
+
+@media (min-width: 900px) {
+.training-grid {
+flex-direction: row;
+align-items: start;
+gap: 50px;
+}
+
+.training-flyer-wrap {
+flex: 0 0 40%;
+max-width: 420px;
+position: sticky;
+top: 120px;
+}
+
+.training-details {
+flex: 1;
+}
+}
+
+@media (max-width: 599px) {
+.training-section {
+padding: 50px 0;
+}
+
+.training-section--embedded {
+padding: 30px 20px;
+margin: 35px 0 45px;
+}
+}
+
 /* Hero Buttons */
 .hero-buttons {
 display: flex;
