@@ -1067,6 +1067,24 @@ overflow-wrap: break-word;
 word-break: break-word;
 }
 
+.results th:first-child,
+.results td:first-child {
+white-space: nowrap;
+word-break: normal;
+overflow-wrap: normal;
+width: 15%;
+}
+
+.results th:nth-child(2),
+.results td:nth-child(2) {
+width: 45%;
+}
+
+.results th:last-child,
+.results td:last-child {
+width: 40%;
+}
+
 .results thead {
 background: var(--gray);
 }
@@ -1105,47 +1123,54 @@ color: #333;
 font-weight: 800;
 font-size: 1.1rem;
 color: var(--brand);
-width: 15%;
 }
 
 /* Teamname */
 .results td:nth-child(2) {
 font-weight: 600;
-width: 45%;
 }
 
-/* Zeit */
+/* Zeit / Kategorie */
 .results td:last-child {
 font-weight: 800;
 font-size: 1.1rem;
 color: var(--brand-light);
 text-align: right;
 font-family: 'Courier New', monospace;
-width: 40%;
 }
 
-/* Medal Highlights - Top 3 */
-.results tbody tr:nth-child(1) {
+.results th:last-child {
+text-align: right;
+}
+
+#starterliste .results td:last-child {
+font-family: inherit;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+/* Medal Highlights - Top 3 (nur Ergebnisse) */
+#ergebnisse .results tbody tr:nth-child(1) {
 background: linear-gradient(90deg, rgba(255, 215, 0, 0.08), transparent);
 }
 
-.results tbody tr:nth-child(1) td:first-child::before {
+#ergebnisse .results tbody tr:nth-child(1) td:first-child::before {
 content: '🥇 ';
 }
 
-.results tbody tr:nth-child(2) {
+#ergebnisse .results tbody tr:nth-child(2) {
 background: linear-gradient(90deg, rgba(192, 192, 192, 0.08), transparent);
 }
 
-.results tbody tr:nth-child(2) td:first-child::before {
+#ergebnisse .results tbody tr:nth-child(2) td:first-child::before {
 content: '🥈 ';
 }
 
-.results tbody tr:nth-child(3) {
+#ergebnisse .results tbody tr:nth-child(3) {
 background: linear-gradient(90deg, rgba(205, 127, 50, 0.08), transparent);
 }
 
-.results tbody tr:nth-child(3) td:first-child::before {
+#ergebnisse .results tbody tr:nth-child(3) td:first-child::before {
 content: '🥉 ';
 }
 
@@ -1162,8 +1187,9 @@ font-size: 0.85rem;
 .results th {
 font-size: 0.7rem;
 }
+.results th:first-child,
 .results td:first-child {
-width: 12%;
+width: 15%;
 font-size: 0.9rem;
 }
 .results td:last-child {
@@ -2220,91 +2246,4 @@ box-shadow: 0 0 30px rgba(0,0,0,0.5);
 position: absolute;
 top: 30px; right: 40px;
 color: white; font-size: 40px; cursor: pointer;
-}
-/* --- STARTERLISTE 2026 (Finaler Look) --- */
-
-.starter-table {
-width: 100%;
-border-collapse: collapse;
-font-family: 'Outfit', sans-serif;
-table-layout: fixed;
-}
-
-.starter-table th,
-.starter-table td {
-overflow-wrap: break-word;
-word-break: break-word;
-}
-
-.starter-table thead {
-background: var(--gray);
-}
-
-.starter-table th {
-padding: 15px 20px;
-text-align: left;
-font-weight: 800;
-font-size: 0.85rem;
-text-transform: uppercase;
-letter-spacing: 1px;
-color: var(--brand);
-}
-
-/* Kategorie-Header auch rechts ausrichten */
-.starter-table th:last-child {
-text-align: right;
-}
-
-.starter-table tbody tr {
-border-bottom: 1px solid #f0f0f0;
-}
-
-.starter-table td {
-padding: 18px 20px;
-color: #333;
-font-size: inherit;
-}
-
-.starter-table th:first-child,
-.starter-table td:first-child {
-font-weight: 800;
-color: var(--brand);
-width: 8%;
-font-size: 0.95rem;
-}
-
-.starter-table th:nth-child(2),
-.starter-table td:nth-child(2) {
-font-weight: 600;
-color: var(--black);
-width: 57%;
-}
-
-.starter-table th:last-child,
-.starter-table td:last-child {
-font-weight: 800;
-font-size: 1.1rem;
-color: var(--brand-light);
-text-align: right;
-text-transform: uppercase;
-letter-spacing: 0.5px;
-width: 35%;
-}
-
-/* Mobil-Optimierung – angeglichen an .results */
-@media (max-width: 600px) {
-.starter-table th,
-.starter-table td {
-padding: 12px 8px;
-font-size: 0.85rem;
-}
-.starter-table th {
-font-size: 0.7rem;
-}
-.starter-table td:first-child {
-font-size: 0.85rem;
-}
-.starter-table td:last-child {
-font-size: 0.8rem;
-}
 }
