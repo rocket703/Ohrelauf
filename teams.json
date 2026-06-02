@@ -119,9 +119,14 @@
 "name": "Sternmelissen",
 "kategorie": "Mixed"
 },
-   {
+        {
 "nummer": "25",
 "name": "Läufer statt Denker",
+"kategorie": "Schüler"
+},
+   {
+"nummer": "26",
+"name": "Kuni",
 "kategorie": "Schüler"
 }
 ]
