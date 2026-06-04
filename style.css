@@ -2285,7 +2285,7 @@ contain: none;
 display: flex;
 gap: 80px;
 width: max-content;
-animation: logo-marquee-scroll 45s linear infinite;
+animation: logo-marquee-scroll 38s linear infinite;
 will-change: transform;
 }
 
