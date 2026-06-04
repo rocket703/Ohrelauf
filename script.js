@@ -249,7 +249,8 @@ if (marqueeContent) {
 function openLightbox(src) {
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
-    if (!lb || !lbImg) return;
+    if (!lb || !lbImg || !src) return;
+    lbImg.src = '';
     lbImg.src = src;
     lb.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -257,9 +258,13 @@ function openLightbox(src) {
 window.openLightbox = openLightbox;
 window.closeLightbox = function() {
     const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
     if (lb) {
-        lb.classList.remove('active'); // Das hier nimmt das "display: flex" wieder weg
-        document.body.style.overflow = 'auto'; // Erlaubt das Scrollen wieder
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    if (lbImg) {
+        lbImg.removeAttribute('src');
     }
 };
 

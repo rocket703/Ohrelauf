@@ -347,6 +347,18 @@ padding: 25px;
 border-radius: 25px;
 z-index: 3;
 box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+text-decoration: none;
+color: var(--brand);
+cursor: pointer;
+}
+
+.stats-card:hover {
+color: var(--brand-light);
+}
+
+.stats-card:focus-visible {
+outline: 3px solid var(--brand-light);
+outline-offset: 3px;
 }
 
 /* --- 6. DIE 3 KARTEN --- */
