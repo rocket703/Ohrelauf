@@ -245,6 +245,12 @@ if (marqueeContent) {
     marqueeContent.innerHTML += marqueeContent.innerHTML;
 }
 
+const logoMarqueeContent = document.getElementById('logo-marquee-content');
+if (logoMarqueeContent) {
+    const original = logoMarqueeContent.innerHTML;
+    logoMarqueeContent.innerHTML = original.repeat(4);
+}
+
 // Lightbox Funktionen
 function openLightbox(src) {
     const lb = document.getElementById('lightbox');

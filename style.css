@@ -849,6 +849,18 @@ transform: translateY(-9px) rotate(-45deg);
 }
 /* --- 8. PHILOSOPHY SECTION --- */
 
+#philosophie {
+background: var(--white);
+}
+
+.phil-right {
+background: white;
+padding: 30px 20px;
+border-radius: 20px;
+border: 2px solid var(--brand);
+box-shadow: 0 8px 30px rgba(0, 35, 102, 0.06);
+}
+
 /* Mobile Base Styles */
 .philosophy-grid {
 display: flex;
@@ -859,7 +871,7 @@ gap: 25px;
 .phil-left .section-title {
 font-size: 2.2rem;
 line-height: 1.1;
-margin-bottom: 15px; /* Weniger Abstand */
+margin-bottom: 15px;
 letter-spacing: -1px;
 }
 
@@ -867,15 +879,8 @@ letter-spacing: -1px;
 font-size: 1.1rem;
 font-weight: 600;
 color: var(--brand-light);
-line-height: 1.3; /* Kompakter */
-margin-bottom: 0; /* Kein extra Margin */
-}
-
-.phil-right {
-background: white;
-padding: 30px 20px;
-border-radius: 20px;
-box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+line-height: 1.3;
+margin-bottom: 0;
 }
 
 .phil-text {
@@ -1001,6 +1006,14 @@ font-size: 1.2rem;
 }
 }
 /* === ERGEBNISSE TABELLEN === */
+
+.results-intro {
+max-width: 600px;
+margin: -20px auto 35px;
+color: #555;
+font-size: 1.05rem;
+line-height: 1.6;
+}
 
 .results-tabs {
 display: flex;
@@ -1322,6 +1335,12 @@ transition: opacity 0.3s ease;
 opacity: 1;
 }
 
+.info-grid-cta {
+grid-column: 1 / -1;
+justify-self: center;
+margin-top: 10px;
+}
+
 /* Tablet (ab 600px) */
 @media (min-width: 600px) {
 .info-grid {
@@ -1371,8 +1390,8 @@ font-size: 1.4rem;
 }
 
 /* --- VORBEREITUNGSTRAINING --- */
-.training-section {
-padding: 70px 0;
+#vorbereitung.training-section {
+padding-top: 60px;
 }
 
 .training-section--embedded {
@@ -2181,6 +2200,89 @@ width: 100%;
 max-width: 100%;
 overflow: hidden;
 overflow-x: clip;
+}
+
+/* Partner-Logos (unter Event-Info) */
+.logo-marquee-section {
+width: 100%;
+max-width: 100%;
+overflow: hidden;
+overflow-x: clip;
+background: var(--white);
+padding: 50px 0 25px;
+}
+
+.logo-marquee-section .section-title {
+margin-bottom: 32px;
+}
+
+@media (max-width: 599px) {
+.logo-marquee-section .section-title {
+font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+line-height: 1.2;
+letter-spacing: -0.5px;
+padding: 0 20px;
+hyphens: auto;
+-webkit-hyphens: auto;
+overflow-wrap: break-word;
+}
+}
+
+.logo-marquee {
+background: transparent;
+padding: 0;
+contain: none;
+}
+
+.logo-marquee .marquee-content {
+display: flex;
+gap: 80px;
+width: max-content;
+animation: logo-marquee-scroll 45s linear infinite;
+will-change: transform;
+}
+
+@media (min-width: 768px) {
+.logo-marquee .marquee-content {
+gap: 120px;
+}
+}
+
+.logo-marquee-img {
+height: 88px;
+width: auto;
+max-width: 220px;
+object-fit: contain;
+flex-shrink: 0;
+pointer-events: none;
+user-select: none;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+}
+
+@media (min-width: 768px) {
+.logo-marquee-img {
+height: 112px;
+max-width: 280px;
+}
+}
+
+@keyframes logo-marquee-scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-25%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.logo-marquee .marquee-content {
+animation: none;
+flex-wrap: wrap;
+justify-content: center;
+width: 100%;
+max-width: 1050px;
+margin: 0 auto;
+padding: 0 20px;
+row-gap: 24px;
+}
 }
 
 /* Marquee Container */
