@@ -30,7 +30,7 @@ Der Ohrelauf am **19. Juni 2026** ist ein traditionsreicher Spendenlauf auf der 
 ## Tech Stack
 
 * **Frontend:** HTML5, CSS3 (Custom Properties, Grid, Flexbox), Vanilla JavaScript.
-* **Typografie:** [Outfit](https://fonts.google.com/specimen/Outfit) via Google Fonts (300, 400, 700, 900).
+* **Typografie:** [Outfit](https://fonts.google.com/specimen/Outfit) self-hosted in `fonts/outfit/` (300, 400, 700, 900, WOFF2).
 * **Icons:** FontAwesome Integration.
 * **Formular-Verarbeitung:** [Web3Forms](https://web3forms.com/) – Sicherer, serverloser E-Mail-Versand.
 * **Hosting:** [GitHub Pages](https://pages.github.com/) für schnelle, weltweite Auslieferung und SSL-Verschlüsselung.
