@@ -124,9 +124,14 @@
 "name": "Läufer statt Denker",
 "kategorie": "Schüler"
 },
-   {
+        {
 "nummer": "26",
 "name": "Kuni",
 "kategorie": "Schüler"
+},
+   {
+"nummer": "27",
+"name": "Lucky Old Runners",
+"kategorie": "Mixed"
 }
 ]
