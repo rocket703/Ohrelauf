@@ -129,9 +129,19 @@
 "name": "Kuni",
 "kategorie": "Schüler"
 },
-   {
+          {
 "nummer": "27",
 "name": "Lucky Old Runners",
 "kategorie": "Mixed"
+},
+          {
+"nummer": "28",
+"name": "Jugendclb WMS",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "29",
+"name": "Blizzards Cheerleader",
+"kategorie": "Schüler"
 }
 ]
