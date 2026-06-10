@@ -139,9 +139,14 @@
 "name": "Jugendclub WMS",
 "kategorie": "Mixed"
 },
-   {
+            {
 "nummer": "29",
 "name": "Blizzards Cheerleader",
 "kategorie": "Schüler"
+},
+   {
+"nummer": "30",
+"name": "Heide-Power",
+"kategorie": "Mixed"
 }
 ]
