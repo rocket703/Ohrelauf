@@ -144,9 +144,14 @@
 "name": "Blizzards Cheerleader",
 "kategorie": "Schüler"
 },
-   {
+           {
 "nummer": "30",
 "name": "Heide-Power",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "31",
+"name": "Heul nicht, lauf",
 "kategorie": "Mixed"
 }
 ]
