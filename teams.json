@@ -1,17 +1,17 @@
 [
 {
 "nummer": "01",
-"name": "Versicherungsbüro 01",
+"name": "Versicherungsbüro I",
 "kategorie": "Mixed"
 },
 {
 "nummer": "02",
-"name": "Versicherungsbüro 02",
+"name": "Versicherungsbüro II",
 "kategorie": "Mixed"
 },
 {
 "nummer": "03",
-"name": "Versicherungsbüro 03",
+"name": "Versicherungsbüro III",
 "kategorie": "Mixed"
 },
 {
@@ -149,9 +149,19 @@
 "name": "Heide-Power",
 "kategorie": "Mixed"
 },
-   {
+            {
 "nummer": "31",
 "name": "Heul nicht, lauf",
+"kategorie": "Mixed"
+},
+            {
+"nummer": "32",
+"name": "Ohrekicker I",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "33",
+"name": "Ohrekicker II",
 "kategorie": "Mixed"
 }
 ]
