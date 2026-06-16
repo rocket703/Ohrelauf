@@ -159,9 +159,14 @@
 "name": "Ohrekicker I",
 "kategorie": "Mixed"
 },
-   {
+             {
 "nummer": "33",
 "name": "Ohrekicker II",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "34",
+"name": "Die Seitenstecher",
 "kategorie": "Mixed"
 }
 ]
