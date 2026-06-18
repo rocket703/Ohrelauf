@@ -164,9 +164,49 @@
 "name": "Ohrekicker II",
 "kategorie": "Mixed"
 },
-   {
+               {
 "nummer": "34",
 "name": "Die Seitenstecher",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "35",
+"name": "Die schnellen Schildkröten aus dem Melissenweg",
+"kategorie": "Bambinis"
+},
+     {
+"nummer": "36",
+"name": "4 Gewinnt",
+"kategorie": "Mixed"
+},
+     {
+"nummer": "37",
+"name": "Kali's Speed Queens",
+"kategorie": "SChüler"
+},
+     {
+"nummer": "38",
+"name": "Kali's Rennmäuse",
+"kategorie": "Bambinis"
+},
+     {
+"nummer": "39",
+"name": "Kali's Flitzeblitze",
+"kategorie": "Bambinis"
+},
+   {
+"nummer": "40",
+"name": "Vici und die starken Männer",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "40",
+"name": "Grüne Börde",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "41",
+"name": "Intersport Große",
 "kategorie": "Mixed"
 }
 ]
