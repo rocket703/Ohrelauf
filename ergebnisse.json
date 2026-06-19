@@ -78,5 +78,106 @@
       "time": "29:42,36"
     }
   ],
-  "mixed": []
+  "mixed": [
+    {
+      "rank": 1,
+      "name": "4 Gewinnt",
+      "time": "33:30,21"
+    },
+    {
+      "rank": 2,
+      "name": "Intersport Große",
+      "time": "38:25,64"
+    },
+    {
+      "rank": 3,
+      "name": "Ohrekicker II",
+      "time": "39:08,05"
+    },
+    {
+      "rank": 4,
+      "name": "Versicherungsbüro 01",
+      "time": "39:31,52"
+    },
+    {
+      "rank": 5,
+      "name": "Die Genussläufer",
+      "time": "42:12,21"
+    },
+    {
+      "rank": 6,
+      "name": "Lustgraben",
+      "time": "42:20,77"
+    },
+    {
+      "rank": 7,
+      "name": "Die Schlusslichter",
+      "time": "43:57,33"
+    },
+    {
+      "rank": 8,
+      "name": "Team Schlösserlauf",
+      "time": "45:19,24"
+    },
+    {
+      "rank": 9,
+      "name": "Heul nicht, lauf",
+      "time": "45:41,92"
+    },
+    {
+      "rank": 10,
+      "name": "Sippenpapas",
+      "time": "46:08,89"
+    },
+    {
+      "rank": 11,
+      "name": "Ohrekicker I",
+      "time": "46:38,39"
+    },
+    {
+      "rank": 12,
+      "name": "Vici und die starken Männer",
+      "time": "47:38,02"
+    },
+    {
+      "rank": 13,
+      "name": "AWG Wohnfüchse",
+      "time": "48:14,80"
+    },
+    {
+      "rank": 14,
+      "name": "Grün Börde",
+      "time": "49:10,24"
+    },
+    {
+      "rank": 15,
+      "name": "Versicherungsbüro 02",
+      "time": "49:32,33"
+    },
+    {
+      "rank": 16,
+      "name": "Heide-Power",
+      "time": "50:20,27"
+    },
+    {
+      "rank": 17,
+      "name": "Blaue Nase hilft",
+      "time": "51:07,86"
+    },
+    {
+      "rank": 18,
+      "name": "Jugendclub WMS",
+      "time": "53:12,17"
+    },
+    {
+      "rank": 19,
+      "name": "Liwa Läuft",
+      "time": "55:45,05"
+    },
+    {
+      "rank": 20,
+      "name": "Lucky Old Runners",
+      "time": "59:59,58"
+    }
+  ]
 }
