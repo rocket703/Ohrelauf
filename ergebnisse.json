@@ -29,13 +29,54 @@
       "rank": 6,
       "name": "Kanu Kids 2",
       "time": "11:19,0"
+    }
+  ],
+  "schueler": [
+    {
+      "rank": 1,
+      "name": "Kali´s Speed Queens",
+      "time": "21:15,99"
+    },
+    {
+      "rank": 2,
+      "name": "Gutenberg 6",
+      "time": "22:39,33"
+    },
+    {
+      "rank": 3,
+      "name": "Gutenberg 5",
+      "time": "23:06,8"
+    },
+    {
+      "rank": 4,
+      "name": "Blizzards Cheerleader",
+      "time": "24:01,99"
+    },
+    {
+      "rank": 5,
+      "name": "Kanu",
+      "time": "24:21,45"
+    },
+    {
+      "rank": 6,
+      "name": "Gutenberg 4",
+      "time": "25:22,58"
     },
     {
       "rank": 7,
-      "name": "Die flotten Störche",
-      "time": "DNF"
+      "name": "Sippenkinder ganz groß",
+      "time": "26:01,49"
+    },
+    {
+      "rank": 8,
+      "name": "Sippenkinder groß",
+      "time": "27:34,86"
+    },
+    {
+      "rank": 9,
+      "name": "Läufer statt Denker",
+      "time": "29:42,36"
     }
   ],
-  "schueler": [],
   "mixed": []
 }
