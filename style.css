@@ -395,7 +395,7 @@ outline-offset: 3px;
 }
 
 /* --- 6. DIE 3 KARTEN --- */
-/* === FLIP CARDS - MOBILE FIRST === */
+/* === STRECKENKARTEN – Vorhang von oben === */
 .card-grid {
 display: grid;
 grid-template-columns: 1fr;
@@ -405,10 +405,13 @@ margin-top: 40px;
 
 .flip-card {
 height: 420px;
-perspective: 1500px;
 cursor: pointer;
 transition: transform 0.2s ease;
 position: relative;
+overflow: hidden;
+border-radius: 25px;
+isolation: isolate;
+-webkit-tap-highlight-color: transparent;
 }
 
 .flip-card:active {
@@ -419,19 +422,12 @@ transform: scale(0.98);
 position: relative;
 width: 100%;
 height: 100%;
-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-transform-style: preserve-3d;
-}
-
-.flip-card.flipped .card-inner {
-transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
 position: absolute;
 width: 100%;
 height: 100%;
-backface-visibility: hidden;
 border-radius: 25px;
 overflow: hidden;
 box-shadow: 0 8px 30px rgba(0, 35, 102, 0.08);
@@ -477,12 +473,6 @@ pointer-events: none;
 z-index: 1;
 }
 
-/* Explizit KEIN Gradient auf Rückseite */
-.card-back::after,
-.card-back::before {
-display: none !important;
-}
-
 .flip-card:hover .c-img img {
 transform: scale(1.03);
 }
@@ -513,11 +503,14 @@ font-weight: 500;
 margin-bottom: 15px;
 }
 
-/* BACK CARD */
+/* BACK CARD – Vorhang-Overlay */
 .card-back {
-background: var(--brand); /* Solides Blau statt Gradient */
 color: white;
-transform: rotateY(180deg);
+transform: translate3d(0, -100%, 0);
+transition: transform 0.65s cubic-bezier(0.32, 0.72, 0, 1);
+background:
+linear-gradient(180deg, rgba(0, 35, 102, 0.82) 0%, rgba(0, 35, 102, 0.94) 100%),
+url('images/vorhang.webp') center top / cover no-repeat;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -525,7 +518,39 @@ align-items: center;
 padding: 40px 30px 30px 30px;
 text-align: center;
 position: relative;
-z-index: 2; /* Höher als Vorderseite */
+z-index: 4;
+will-change: transform;
+}
+
+.card-back::before {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+height: 32px;
+background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+pointer-events: none;
+z-index: 1;
+}
+
+.card-back::after {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+height: 14px;
+background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+pointer-events: none;
+z-index: 1;
+}
+
+.card-back h3,
+.card-back p,
+.card-back .card-hint {
+position: relative;
+z-index: 2;
 }
 
 .card-back h3 {
@@ -548,7 +573,15 @@ display: block;
 margin: 8px 0;
 }
 
-/* CARD HINT - Nur einmal im Content */
+.flip-card.flipped .card-back {
+transform: translate3d(0, 0, 0);
+}
+
+.flip-card:not(.flipped) .card-back {
+pointer-events: none;
+}
+
+/* CARD HINT */
 .card-hint {
 display: block;
 font-size: 0.7rem;
@@ -2329,6 +2362,10 @@ max-width: 1050px;
 margin: 0 auto;
 padding: 0 20px;
 row-gap: 24px;
+}
+
+.flip-card .card-back {
+transition: none;
 }
 }
 

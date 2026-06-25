@@ -19,7 +19,7 @@ if (burgerBtn && mainNav) {
 
 // --- 2. TIMER LOGIC ---
 function updateTimer() {
-    const eventDate = new Date("June 19, 2026 16:00:00").getTime();
+    const eventDate = new Date("June 18, 2027 16:00:00").getTime();
     
     setInterval(() => {
         const now = new Date().getTime();
@@ -274,7 +274,7 @@ window.closeLightbox = function() {
     }
 };
 
-// === STARTERLISTE 2026 LADEN ===
+// === STARTERLISTE 2027 LADEN ===
 async function loadStarterlist() {
     const tableBody = document.getElementById('teams-list-body');
     if (!tableBody) return;
