@@ -1,17 +1,17 @@
 [
 {
 "nummer": "01",
-"name": "Versicherungsbüro 01",
+"name": "Versicherungsbüro I",
 "kategorie": "Mixed"
 },
 {
 "nummer": "02",
-"name": "Versicherungsbüro 02",
+"name": "Versicherungsbüro II",
 "kategorie": "Mixed"
 },
 {
 "nummer": "03",
-"name": "Versicherungsbüro 03",
+"name": "Versicherungsbüro III",
 "kategorie": "Mixed"
 },
 {
@@ -129,9 +129,84 @@
 "name": "Kuni",
 "kategorie": "Schüler"
 },
-   {
+          {
 "nummer": "27",
 "name": "Lucky Old Runners",
+"kategorie": "Mixed"
+},
+          {
+"nummer": "28",
+"name": "Jugendclub WMS",
+"kategorie": "Mixed"
+},
+            {
+"nummer": "29",
+"name": "Blizzards Cheerleader",
+"kategorie": "Schüler"
+},
+           {
+"nummer": "30",
+"name": "Heide-Power",
+"kategorie": "Mixed"
+},
+            {
+"nummer": "31",
+"name": "Heul nicht, lauf",
+"kategorie": "Mixed"
+},
+            {
+"nummer": "32",
+"name": "Ohrekicker I",
+"kategorie": "Mixed"
+},
+             {
+"nummer": "33",
+"name": "Ohrekicker II",
+"kategorie": "Mixed"
+},
+               {
+"nummer": "34",
+"name": "Die Seitenstecher",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "35",
+"name": "Die schnellen Schildkröten aus dem Melissenweg",
+"kategorie": "Bambinis"
+},
+     {
+"nummer": "36",
+"name": "Kali´s Windschattenexpress",
+"kategorie": "Mixed"
+},
+     {
+"nummer": "37",
+"name": "Kali's Speed Queens",
+"kategorie": "SChüler"
+},
+     {
+"nummer": "38",
+"name": "Kali's Rennmäuse",
+"kategorie": "Bambinis"
+},
+     {
+"nummer": "39",
+"name": "Kali's Flitzeblitze",
+"kategorie": "Bambinis"
+},
+   {
+"nummer": "40",
+"name": "Vici und die starken Männer",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "41",
+"name": "Grüne Börde",
+"kategorie": "Mixed"
+},
+   {
+"nummer": "42",
+"name": "Intersport Große",
 "kategorie": "Mixed"
 }
 ]

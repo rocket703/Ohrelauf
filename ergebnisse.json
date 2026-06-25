@@ -2,137 +2,182 @@
   "bambinis": [
     {
       "rank": 1,
-      "name": "Ohrekicker",
-      "time": "06:20"
+      "name": "Kali´s Flitzeblitze",
+      "time": "6:34,4"
     },
     {
       "rank": 2,
-      "name": "Kali 5",
-      "time": "06:34"
+      "name": "Kanu Kids",
+      "time": "7:29,8"
     },
     {
       "rank": 3,
-      "name": "Schnelle Wichtel",
-      "time": "06:42"
+      "name": "Sippenkinder klein",
+      "time": "8:09,8"
+    },
+    {
+      "rank": 4,
+      "name": "Die schnellen Schildkröten aus dem Melissenweg",
+      "time": "8:50,4"
+    },
+    {
+      "rank": 5,
+      "name": "Kali´s Rennmäuse",
+      "time": "9:00,8"
+    },
+    {
+      "rank": 6,
+      "name": "Kanu Kids 2",
+      "time": "11:19,0"
     }
   ],
   "schueler": [
     {
       "rank": 1,
-      "name": "Gutenberg 7",
-      "time": "19:34:35"
+      "name": "Kali´s Speed Queens",
+      "time": "21:15,99"
     },
     {
       "rank": 2,
-      "name": "SV Kali 4",
-      "time": "20:52:07"
+      "name": "Gutenberg 6",
+      "time": "22:39,33"
     },
     {
       "rank": 3,
-      "name": "SV Kali 2",
-      "time": "20:52:07"
+      "name": "Gutenberg 5",
+      "time": "23:06,8"
     },
     {
       "rank": 4,
-      "name": "SV Kali 6",
-      "time": "22:45:50"
+      "name": "Blizzards Cheerleader",
+      "time": "24:01,99"
     },
     {
       "rank": 5,
-      "name": "SV Kali 3",
-      "time": "23:55:13"
+      "name": "Kanu",
+      "time": "24:21,45"
     },
     {
       "rank": 6,
-      "name": "Gutenberg 2",
-      "time": "24:20:82"
+      "name": "Gutenberg 4",
+      "time": "25:22,58"
     },
     {
       "rank": 7,
-      "name": "Gutenberg 1",
-      "time": "24:57:10"
+      "name": "Sippenkinder ganz groß",
+      "time": "26:01,49"
     },
     {
       "rank": 8,
-      "name": "Gutenberg 5",
-      "time": "25:48:17"
+      "name": "Sippenkinder groß",
+      "time": "27:34,86"
     },
     {
       "rank": 9,
-      "name": "Kanu",
-      "time": "25:48:80"
-    },
-    {
-      "rank": 10,
-      "name": "Super Heros",
-      "time": "27:15:41"
-    },
-    {
-      "rank": 11,
-      "name": "Gutenberg 3",
-      "time": "27:29:04"
-    },
-    {
-      "rank": 12,
-      "name": "Gutenberg 4",
-      "time": "27:52:11"
-    },
-    {
-      "rank": 13,
-      "name": "Gutenberg 6",
-      "time": "28:16:01"
+      "name": "Läufer statt Denker",
+      "time": "29:42,36"
     }
   ],
   "mixed": [
     {
       "rank": 1,
-      "name": "SV Kali 1",
-      "time": "36:45:99"
+      "name": "Kali´s Windschattenexpress",
+      "time": "33:30,21"
     },
     {
       "rank": 2,
-      "name": "Versicherungsbüro TR",
-      "time": "37:25:51"
+      "name": "Intersport Große",
+      "time": "38:25,64"
     },
     {
       "rank": 3,
-      "name": "Ohrekicker",
-      "time": "38:25:51"
+      "name": "Ohrekicker II",
+      "time": "39:08,05"
     },
     {
       "rank": 4,
-      "name": "Kanu/Leichtathletik",
-      "time": "39:52:00"
+      "name": "Versicherungsbüro 01",
+      "time": "39:31,52"
     },
     {
       "rank": 5,
-      "name": "Bier läuft gut",
-      "time": "41:21:66"
+      "name": "Die Genussläufer",
+      "time": "42:12,21"
     },
     {
       "rank": 6,
-      "name": "Laufrudel",
-      "time": "41:30:58"
+      "name": "Lustgraben",
+      "time": "42:20,77"
     },
     {
       "rank": 7,
-      "name": "Deutsche Post",
-      "time": "41:36:12"
+      "name": "Die Schlusslichter",
+      "time": "43:57,33"
     },
     {
       "rank": 8,
-      "name": "Flinke Mäuse",
-      "time": "47:44:39"
+      "name": "Team Schlösserlauf",
+      "time": "45:19,24"
     },
     {
       "rank": 9,
-      "name": "Die fantastischen Vier",
-      "time": "52:36:35"
+      "name": "Heul nicht, lauf",
+      "time": "45:41,92"
     },
     {
       "rank": 10,
-      "name": "Team Kleeblatt",
-      "time": "–"
+      "name": "Sippenpapas",
+      "time": "46:08,89"
+    },
+    {
+      "rank": 11,
+      "name": "Ohrekicker I",
+      "time": "46:38,39"
+    },
+    {
+      "rank": 12,
+      "name": "Vici und die starken Männer",
+      "time": "47:38,02"
+    },
+    {
+      "rank": 13,
+      "name": "AWG Wohnfüchse",
+      "time": "48:14,80"
+    },
+    {
+      "rank": 14,
+      "name": "Grün Börde",
+      "time": "49:10,24"
+    },
+    {
+      "rank": 15,
+      "name": "Versicherungsbüro 02",
+      "time": "49:32,33"
+    },
+    {
+      "rank": 16,
+      "name": "Heide-Power",
+      "time": "50:20,27"
+    },
+    {
+      "rank": 17,
+      "name": "Blaue Nase hilft",
+      "time": "51:07,86"
+    },
+    {
+      "rank": 18,
+      "name": "Jugendclub WMS",
+      "time": "53:12,17"
+    },
+    {
+      "rank": 19,
+      "name": "Liwa Läuft",
+      "time": "55:45,05"
+    },
+    {
+      "rank": 20,
+      "name": "Lucky Old Runners",
+      "time": "59:59,58"
     }
   ]
 }
